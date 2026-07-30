@@ -1,11 +1,875 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+const siteUrl = "https://www.consultoriaknowhow2020.com.br";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title =
+  "Consultoria Empresarial | Dr. Alexandre Garcia";
+
+const description =
+  "Consultoria empresarial em planejamento estratégico, finanças, marketing, recursos humanos e melhoria de processos para médias e grandes empresas.";
+
+const whatsappUrl =
+  "https://wa.me/5548984137623?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20os%20servi%C3%A7os%20de%20consultoria%20empresarial.";
+
+const services = [
+  {
+    title: "Planejamento Estratégico",
+    text: "Definição de objetivos, análise de mercado, posicionamento, indicadores, metas e planos de ação.",
+  },
+  {
+    title: "Consultoria Financeira",
+    text: "Fluxo de caixa, orçamento empresarial, capital de giro, análise de investimentos e controle financeiro.",
+  },
+  {
+    title: "Marketing e Posicionamento",
+    text: "Estratégias de marketing, segmentação, posicionamento competitivo, SEO e geração de oportunidades.",
+  },
+  {
+    title: "Recursos Humanos",
+    text: "Estruturação de equipes, recrutamento, treinamento, clima organizacional, liderança e desempenho.",
+  },
+  {
+    title: "Gestão Empresarial",
+    text: "Diagnóstico organizacional, governança, indicadores, processos, compliance e melhoria da gestão.",
+  },
+  {
+    title: "Produção e Serviços",
+    text: "Mapeamento de processos, eficiência operacional, qualidade, produtividade e redução de desperdícios.",
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <title>{title}</title>
+
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={siteUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={siteUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        name: "Dr. Alexandre Garcia - Consultoria Empresarial",
+        url: siteUrl,
+        description,
+        areaServed: {
+          "@type": "Country",
+          name: "Brasil",
+        },
+        serviceType: [
+          "Consultoria empresarial",
+          "Planejamento estratégico",
+          "Consultoria financeira",
+          "Marketing",
+          "Recursos humanos",
+          "Gestão de processos",
+        ],
+      })}
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header-content">
+        <a href="#inicio" class="brand">
+          <span>Dr. Alexandre Garcia</span>
+          <small>Consultoria Empresarial</small>
+        </a>
+
+        <nav aria-label="Navegação principal">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#metodologia">Metodologia</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <a class="header-button" href={whatsappUrl}>
+          Falar com o consultor
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="eyebrow">
+              Estratégia, gestão e resultados
+            </span>
+
+            <h1>
+              Consultoria empresarial para médias e grandes empresas
+            </h1>
+
+            <p class="hero-text">
+              Soluções personalizadas em planejamento estratégico,
+              finanças, marketing, recursos humanos e melhoria de
+              processos para empresas que buscam crescimento,
+              eficiência e vantagem competitiva.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href={whatsappUrl}>
+                Solicitar diagnóstico
+              </a>
+
+              <a class="secondary-button" href="#servicos">
+                Conhecer os serviços
+              </a>
+            </div>
+
+            <div class="hero-highlights">
+              <div>
+                <strong>Visão estratégica</strong>
+                <span>Decisões orientadas por dados</span>
+              </div>
+
+              <div>
+                <strong>Soluções personalizadas</strong>
+                <span>Projetos adaptados à empresa</span>
+              </div>
+
+              <div>
+                <strong>Foco em resultados</strong>
+                <span>Metas, indicadores e execução</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <span class="card-label">Diagnóstico empresarial</span>
+
+            <h2>Transforme desafios em oportunidades de crescimento</h2>
+
+            <p>
+              Identifique gargalos, prioridades estratégicas e ações
+              necessárias para melhorar o desempenho da organização.
+            </p>
+
+            <ul>
+              <li>Análise do cenário atual</li>
+              <li>Identificação de problemas e oportunidades</li>
+              <li>Definição de prioridades</li>
+              <li>Plano de ação estratégico</li>
+            </ul>
+
+            <a href={whatsappUrl}>
+              Agendar uma conversa →
+            </a>
+          </aside>
+        </div>
+      </section>
+
+      <section id="sobre" class="section about">
+        <div class="container about-grid">
+          <div>
+            <span class="eyebrow">Sobre o consultor</span>
+
+            <h2>
+              Experiência multidisciplinar aplicada à gestão empresarial
+            </h2>
+          </div>
+
+          <div class="about-content">
+            <p>
+              O Dr. Alexandre Garcia atua com consultoria empresarial,
+              ajudando organizações a melhorar sua gestão, definir
+              estratégias, organizar processos e tomar decisões mais
+              consistentes.
+            </p>
+
+            <p>
+              O trabalho combina análise estratégica, conhecimento
+              financeiro, marketing, gestão de pessoas e melhoria
+              operacional, com soluções adaptadas às necessidades de
+              cada empresa.
+            </p>
+
+            <a class="text-link" href="#contato">
+              Solicitar apresentação da consultoria →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicos" class="section services">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Áreas de atuação</span>
+
+            <h2>Soluções integradas para melhorar o desempenho empresarial</h2>
+
+            <p>
+              A consultoria pode atuar em projetos específicos ou de
+              forma integrada, conforme os objetivos e desafios da
+              organização.
+            </p>
+          </div>
+
+          <div class="service-grid">
+            {
+              services.map((service, index) => (
+                <article class="service-card">
+                  <span class="service-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <h3>{service.title}</h3>
+
+                  <p>{service.text}</p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section id="metodologia" class="section methodology">
+        <div class="container">
+          <div class="section-heading light">
+            <span class="eyebrow light-eyebrow">Metodologia</span>
+
+            <h2>Do diagnóstico à execução</h2>
+
+            <p>
+              Um processo estruturado para compreender a realidade da
+              empresa, definir prioridades e acompanhar resultados.
+            </p>
+          </div>
+
+          <div class="steps">
+            <article>
+              <span>01</span>
+              <h3>Diagnóstico</h3>
+              <p>
+                Levantamento de informações, análise de processos,
+                indicadores, estrutura e desafios.
+              </p>
+            </article>
+
+            <article>
+              <span>02</span>
+              <h3>Planejamento</h3>
+              <p>
+                Definição de objetivos, prioridades, metas, responsáveis
+                e cronograma.
+              </p>
+            </article>
+
+            <article>
+              <span>03</span>
+              <h3>Implementação</h3>
+              <p>
+                Apoio na execução das ações, revisão dos processos e
+                desenvolvimento das soluções.
+              </p>
+            </article>
+
+            <article>
+              <span>04</span>
+              <h3>Acompanhamento</h3>
+              <p>
+                Monitoramento dos indicadores, ajustes e avaliação dos
+                resultados alcançados.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section benefits">
+        <div class="container benefits-grid">
+          <div>
+            <span class="eyebrow">Benefícios</span>
+
+            <h2>Por que contratar uma consultoria empresarial?</h2>
+          </div>
+
+          <div class="benefit-list">
+            <article>
+              <h3>Visão externa e imparcial</h3>
+              <p>
+                Identificação de problemas e oportunidades que podem não
+                ser percebidos internamente.
+              </p>
+            </article>
+
+            <article>
+              <h3>Decisões mais estruturadas</h3>
+              <p>
+                Uso de informações, análises e indicadores para apoiar
+                decisões estratégicas.
+              </p>
+            </article>
+
+            <article>
+              <h3>Melhoria de processos</h3>
+              <p>
+                Redução de desperdícios, aumento da eficiência e melhor
+                aproveitamento dos recursos.
+              </p>
+            </article>
+
+            <article>
+              <h3>Foco na execução</h3>
+              <p>
+                Transformação do planejamento em iniciativas práticas,
+                metas e responsabilidades.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="contact">
+        <div class="container contact-box">
+          <div>
+            <span class="eyebrow light-eyebrow">
+              Entre em contato
+            </span>
+
+            <h2>
+              Vamos conversar sobre os desafios da sua empresa?
+            </h2>
+
+            <p>
+              Solicite uma conversa inicial para apresentar sua empresa,
+              seus objetivos e os principais desafios do negócio.
+            </p>
+          </div>
+
+          <a class="contact-button" href={whatsappUrl}>
+            Falar pelo WhatsApp
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <strong>Dr. Alexandre Garcia</strong>
+          <p>Consultoria Empresarial</p>
+        </div>
+
+        <div>
+          <p>
+            Planejamento estratégico, finanças, marketing, recursos
+            humanos e processos.
+          </p>
+        </div>
+
+        <div>
+          <p>
+            © {new Date().getFullYear()} Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    background: #f7f8fa;
+    color: #142033;
+    font-family:
+      Inter,
+      Arial,
+      Helvetica,
+      sans-serif;
+    line-height: 1.6;
+  }
+
+  :global(a) {
+    color: inherit;
+  }
+
+  .container {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid #e2e6ec;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+  }
+
+  .header-content {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    line-height: 1.2;
+  }
+
+  .brand span {
+    font-weight: 800;
+    font-size: 1.08rem;
+  }
+
+  .brand small {
+    color: #5f6d7e;
+  }
+
+  nav {
+    display: flex;
+    gap: 26px;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: 0.94rem;
+  }
+
+  nav a:hover {
+    color: #1c5ea8;
+  }
+
+  .header-button,
+  .primary-button,
+  .secondary-button,
+  .contact-button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 750;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .header-button,
+  .primary-button {
+    color: white;
+    background: #164f8c;
+  }
+
+  .secondary-button {
+    border: 1px solid #164f8c;
+    color: #164f8c;
+    background: white;
+  }
+
+  .header-button:hover,
+  .primary-button:hover,
+  .secondary-button:hover,
+  .contact-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .hero {
+    padding: 100px 0;
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(53, 114, 176, 0.17),
+        transparent 38%
+      ),
+      linear-gradient(135deg, #f5f8fc, #eef3f8);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.18fr 0.82fr;
+    align-items: center;
+    gap: 70px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #164f8c;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    max-width: 800px;
+    margin-bottom: 26px;
+    font-size: clamp(2.7rem, 5.8vw, 5.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+  }
+
+  h3 {
+    margin-bottom: 12px;
+    font-size: 1.22rem;
+  }
+
+  .hero-text {
+    max-width: 760px;
+    margin-bottom: 32px;
+    color: #405066;
+    font-size: 1.15rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 46px;
+  }
+
+  .hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .hero-highlights div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 16px;
+    border-top: 2px solid #c8d7e8;
+  }
+
+  .hero-highlights strong {
+    font-size: 0.96rem;
+  }
+
+  .hero-highlights span {
+    color: #68778a;
+    font-size: 0.86rem;
+  }
+
+  .hero-card {
+    padding: 42px;
+    color: white;
+    border-radius: 22px;
+    background: #102d4d;
+    box-shadow: 0 28px 70px rgba(18, 44, 73, 0.22);
+  }
+
+  .card-label {
+    display: block;
+    margin-bottom: 18px;
+    color: #a9c8e8;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero-card h2 {
+    font-size: 2rem;
+  }
+
+  .hero-card p,
+  .hero-card li {
+    color: #d7e3ef;
+  }
+
+  .hero-card ul {
+    padding-left: 20px;
+    margin: 26px 0;
+  }
+
+  .hero-card a {
+    font-weight: 800;
+    color: white;
+  }
+
+  .section {
+    padding: 100px 0;
+  }
+
+  .about {
+    background: white;
+  }
+
+  .about-grid,
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+  }
+
+  .about-content {
+    color: #435267;
+    font-size: 1.08rem;
+  }
+
+  .text-link {
+    display: inline-block;
+    margin-top: 14px;
+    color: #164f8c;
+    font-weight: 800;
+  }
+
+  .services {
+    background: #f3f6f9;
+  }
+
+  .section-heading {
+    max-width: 800px;
+    margin-bottom: 55px;
+  }
+
+  .section-heading > p {
+    color: #526175;
+    font-size: 1.08rem;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .service-card {
+    min-height: 260px;
+    padding: 30px;
+    border: 1px solid #dfe6ee;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(22, 43, 67, 0.05);
+  }
+
+  .service-number {
+    display: block;
+    margin-bottom: 35px;
+    color: #5c86b2;
+    font-weight: 800;
+  }
+
+  .service-card p {
+    color: #5a687a;
+  }
+
+  .methodology {
+    color: white;
+    background: #102d4d;
+  }
+
+  .light h2,
+  .light p {
+    color: white;
+  }
+
+  .light-eyebrow {
+    color: #9bc1e6;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  .steps article {
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .steps span {
+    display: block;
+    margin-bottom: 35px;
+    color: #96bce2;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  .steps p {
+    color: #cbd9e7;
+  }
+
+  .benefits {
+    background: white;
+  }
+
+  .benefit-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .benefit-list article {
+    padding: 0 0 25px;
+    border-bottom: 1px solid #dfe5ec;
+  }
+
+  .benefit-list p {
+    color: #59687b;
+  }
+
+  .contact {
+    padding: 70px 0;
+    background: #f3f6f9;
+  }
+
+  .contact-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 55px;
+    padding: 58px;
+    color: white;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #164f8c, #10355d);
+  }
+
+  .contact-box h2 {
+    max-width: 760px;
+  }
+
+  .contact-box p {
+    max-width: 700px;
+    margin-bottom: 0;
+    color: #dbe8f4;
+  }
+
+  .contact-button {
+    flex-shrink: 0;
+    color: #153f6b;
+    background: white;
+  }
+
+  footer {
+    padding: 45px 0;
+    color: #cbd5df;
+    background: #0a1d31;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 40px;
+  }
+
+  footer p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 920px) {
+    nav {
+      display: none;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .benefits-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .service-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-box {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .container {
+      width: min(100% - 28px, 1180px);
+    }
+
+    .header-button {
+      display: none;
+    }
+
+    .hero {
+      padding: 68px 0;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+    }
+
+    .hero-highlights,
+    .service-grid,
+    .steps,
+    .benefit-list,
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+      width: 100%;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .hero-card,
+    .contact-box {
+      padding: 32px 24px;
+    }
+  }
+</style>
